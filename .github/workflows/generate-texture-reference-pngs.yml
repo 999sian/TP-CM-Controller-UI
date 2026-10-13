@@ -21,7 +21,7 @@ jobs:
       - name: Commit generated PNGs
         shell: bash
         run: |
-          if git diff --quiet -- extras/texture-bases; then
+          if [[ -z "$(git status --porcelain -- extras/texture-bases)" ]]; then
             echo "Texture reference PNGs are already current."
             exit 0
           fi
