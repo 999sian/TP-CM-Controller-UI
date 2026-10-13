@@ -179,10 +179,10 @@ jobs:
         shell: bash
         run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DTP_CLASSIC_DEV_OPTIONS=ON
 
-      - name: Generate texture replacement manifest
+      - name: Verify texture replacement manifest
         if: github.ref == 'refs/heads/v1.4.0-texture-replacements'
         shell: bash
-        run: python tools/generate_texture_replacement_manifest.py --write
+        run: python tools/generate_texture_replacement_manifest.py --check
 
       - name: Upload texture replacement manifest
         if: github.ref == 'refs/heads/v1.4.0-texture-replacements'
