@@ -20,6 +20,10 @@ jobs:
         shell: bash
         run: python tools/generate_texture_replacement_manifest.py --check
 
+      - name: Verify texture base PNGs
+        shell: bash
+        run: python tools/export_texture_reference_pngs.py --check
+
       - name: Upload texture replacement manifest
         uses: actions/upload-artifact@v7
         with:
