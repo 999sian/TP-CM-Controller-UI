@@ -40,6 +40,8 @@ Place a PNG or DDS with the matching Dolphin-style filename in the user's `textu
 
 The exact filenames are generated from the BTIs shipped with each version. See [Custom Texture Replacements](docs/texture-replacements.md) for the complete PlayStation, Xbox, Nintendo Switch and ornament manifest.
 
+For creators, the repository also includes [reference PNGs converted directly from the original BTIs](extras/texture-bases/README.md). These preserve the original artwork, shadows, highlights, transparency and dimensions, making them a practical base for custom prompt designs. They live under `extras/` and are **not included in the .dusk bundle**.
+
 Game texture packs remain compatible and can be used at the same time.
 
 ## Platform Support
