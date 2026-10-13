@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.4.0
+
+- Added native Dusklight user texture replacement support for the mod's PlayStation, Xbox and Nintendo Switch controller artwork.
+- Added replacement support for the custom HUD and menu ornaments.
+- Added a generated manifest with the exact Dolphin-compatible replacement filename for every supported mod texture.
+- Added a dependency-free manifest generator that calculates the same XXH64 source hash used by Dusklight/Aurora.
+- Added CI validation so changing a BTI without updating its replacement manifest is caught before release.
+- Custom replacement images can use higher resolutions while keeping the mod's existing HUD layout and calibration.
+- Existing controller presets, mappings and calibration values are unchanged.
+
+
 ## v1.3.2
 
 - Fixed Linux and Android crashes caused by game-structure ABI offsets being compiled into the mod.

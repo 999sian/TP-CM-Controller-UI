@@ -32,9 +32,15 @@ The GameCube column below represents the **original in-game controls used as the
 
 The mapping follows the **function of the original GameCube controls**, rather than matching button letters between controllers.
 
-## Texture Replacement Compatibility
+## Custom Texture Replacements
 
-TP Classic Modern Controller UI is compatible with texture replacement packs. However, button textures, HUD elements, and interface modifications handled directly by this mod take priority over external texture replacements. Other game textures can still be replaced normally.
+Starting with v1.4.0, the mod's own PlayStation, Xbox, Nintendo Switch and ornament textures can be replaced through Dusklight's native user texture-replacement system.
+
+Place a PNG or DDS with the matching Dolphin-style filename in the user's `texture_replacements/` folder and keep **Texture Replacements** enabled in Dusklight's graphics settings. The mod keeps its controller artwork as normal BTI resources rather than registering higher-priority mod-owned replacements, so user replacements can override the selected prompt without changing layout calibration or editing the `.dusk` file.
+
+The exact filenames are generated from the BTIs shipped with each version. See [Custom Texture Replacements](docs/texture-replacements.md) for the complete PlayStation, Xbox, Nintendo Switch and ornament manifest.
+
+Game texture packs remain compatible and can be used at the same time.
 
 ## Platform Support
 

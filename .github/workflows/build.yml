@@ -16,6 +16,17 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Verify texture replacement manifest
+        shell: bash
+        run: python tools/generate_texture_replacement_manifest.py --check
+
+      - name: Upload texture replacement manifest
+        uses: actions/upload-artifact@v7
+        with:
+          name: texture-replacement-manifest
+          path: docs/texture-replacements.md
+          if-no-files-found: error
+
       - name: Upload shared banner
         uses: actions/upload-artifact@v7
         with:
@@ -25,7 +36,7 @@ jobs:
 
   build:
     name: Build ${{matrix.platform}}
-    if: github.ref != 'refs/heads/twilit-compat-rebuild'
+    if: github.ref != 'refs/heads/twilit-compat-rebuild' && github.ref != 'refs/heads/v1.4.0-texture-replacements'
     needs: prepare
     runs-on: ${{matrix.runner}}
     strategy:
@@ -139,7 +150,7 @@ jobs:
 
   dev-build:
     name: Build dev windows-amd64
-    if: github.ref == 'refs/heads/twilit-compat-rebuild'
+    if: github.ref == 'refs/heads/twilit-compat-rebuild' || github.ref == 'refs/heads/v1.4.0-texture-replacements'
     needs: prepare
     runs-on: windows-latest
 

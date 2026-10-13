@@ -7,7 +7,7 @@ if (NOT DEFINED CMAKE_BUILD_TYPE AND NOT DEFINED ENV{CMAKE_BUILD_TYPE})
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type")
 endif ()
 
-project(tp_classic_modern_controller_ui VERSION 1.3.2 LANGUAGES CXX)
+project(tp_classic_modern_controller_ui VERSION 1.4.0 LANGUAGES CXX)
 
 # Internal calibration UI. Public/release builds leave this OFF so users get
 # the authored layout while developers can still expose every positioning
@@ -53,6 +53,12 @@ if (ANDROID AND CMAKE_BUILD_TYPE STREQUAL "Release")
         COMMAND "${CMAKE_STRIP}" --strip-debug "$<TARGET_FILE:tp_classic_modern_controller_ui>"
         VERBATIM
     )
+endif ()
+
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+    # Public releases must use the Release game ABI. The source also has a
+    # compile-time guard that rejects an accidental DEBUG=1 build.
+    target_compile_definitions(tp_classic_modern_controller_ui PRIVATE TP_CLASSIC_RELEASE_BUILD=1)
 endif ()
 
 if (TP_CLASSIC_DEV_OPTIONS)
