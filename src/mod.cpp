@@ -28,8 +28,8 @@
 #include "mods/svc/config.h"
 #include "mods/svc/ui.h"
 
-#if defined(TP_CLASSIC_RELEASE_BUILD) && defined(DEBUG)
-#error "TP Classic public Release builds must not define DEBUG; it changes the game structure ABI."
+#if defined(TP_CLASSIC_RELEASE_BUILD) && DEBUG
+#error "TP Classic public Release builds must use DEBUG=0; DEBUG=1 changes the game structure ABI."
 #endif
 
 DEFINE_MOD();
