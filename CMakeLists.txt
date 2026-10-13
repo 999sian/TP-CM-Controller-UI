@@ -55,6 +55,12 @@ if (ANDROID AND CMAKE_BUILD_TYPE STREQUAL "Release")
     )
 endif ()
 
+if (CMAKE_BUILD_TYPE STREQUAL "Release")
+    # Public releases must use the Release game ABI. The source also has a
+    # compile-time guard that rejects an accidental DEBUG=1 build.
+    target_compile_definitions(tp_classic_modern_controller_ui PRIVATE TP_CLASSIC_RELEASE_BUILD=1)
+endif ()
+
 if (TP_CLASSIC_DEV_OPTIONS)
     target_compile_definitions(tp_classic_modern_controller_ui PRIVATE TP_CLASSIC_DEV_OPTIONS=1)
 endif ()
