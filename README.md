@@ -1,5 +1,15 @@
 # TP Classic Modern Controller UI
 
+## Experimental Xbox One S port
+
+This fork builds **TP Classic Modern Controller UI 1.4.0** with the Xbox Dusklight host.
+It must be bundled inside a signed Xbox MSIX; copying a desktop `.dusk` into
+app data will not work. Windows/UWP build and console testing are in progress.
+No working Xbox release is claimed yet.
+
+[Build progress](https://github.com/999sian/dusklight/actions/runs/39711549153)
+
+
 **Modern controller prompts, reimagined in the style of Twilight Princess.**
 
 TP Classic Modern Controller UI modernizes the controller interface of **The Legend of Zelda: Twilight Princess** by combining the original game's visual language with custom UI elements designed for modern controllers.
