@@ -20,8 +20,12 @@ if (NOT DUSKLIGHT_VERSION)
     set(DUSKLIGHT_VERSION "2d70c24b377f62cde01c6bddfb64791940d5664d")
 endif ()
 
-include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/FetchDusklight.cmake")
-add_subdirectory("${DUSKLIGHT_DIR}/sdk" dusklight-sdk EXCLUDE_FROM_ALL)
+if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
+    include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/FetchDusklight.cmake")
+    add_subdirectory("${DUSKLIGHT_DIR}/sdk" dusklight-sdk EXCLUDE_FROM_ALL)
+else ()
+    set(DUSKLIGHT_DIR "${CMAKE_SOURCE_DIR}")
+endif ()
 
 configure_file(mod.json.in "${CMAKE_CURRENT_BINARY_DIR}/mod.json" @ONLY NEWLINE_STYLE LF)
 
@@ -42,6 +46,7 @@ endforeach()
 add_mod(tp_classic_modern_controller_ui
     FEATURES game
     SOURCES src/mod.cpp
+    BUNDLE
     MOD_JSON "${CMAKE_CURRENT_BINARY_DIR}/mod.json"
     RES_DIR res
 )
