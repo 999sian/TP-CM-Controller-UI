@@ -4,10 +4,12 @@
 
 This fork builds **TP Classic Modern Controller UI 1.4.0** with the Xbox Dusklight host.
 It must be bundled inside a signed Xbox MSIX; copying a desktop `.dusk` into
-app data will not work. Windows/UWP build and console testing are in progress.
-No working Xbox release is claimed yet.
+app data will not work. The Windows/UWP build and a separate 30-second Xbox One S startup test passed.
+Gameplay compatibility is not yet confirmed.
 
-[Build progress](https://github.com/999sian/dusklight/actions/runs/39711549153)
+[Simple Xbox setup and test results](https://github.com/999sian/dusklight/blob/xbox-mod-ports/docs/xbox-native-mod-ports.md)
+
+[Build progress](https://github.com/999sian/dusklight/actions/runs/39714675293)
 
 
 **Modern controller prompts, reimagined in the style of Twilight Princess.**
