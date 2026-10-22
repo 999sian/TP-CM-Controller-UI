@@ -2,6 +2,8 @@
 
 ## Experimental Xbox One S port
 
+**[Download Xbox installer](https://github.com/999sian/dusklight/releases/tag/v2.0.3-xbox-mod-ports.1006)** · [UWP bundle for developers](https://github.com/999sian/TP-CM-Controller-UI/releases/tag/v1.4.0-xbox.1)
+
 This fork builds **TP Classic Modern Controller UI 1.4.0** with the Xbox Dusklight host.
 It must be bundled inside a signed Xbox MSIX; copying a desktop `.dusk` into
 app data will not work. The Windows/UWP build and a separate 30-second Xbox One S startup test passed.
